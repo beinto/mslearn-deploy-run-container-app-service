@@ -30,8 +30,9 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
+        context: dotnet
         tags: ricacrdemo.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_584399608e894a81b4b3469da68bee32 }}/webimage:${{ github.sha }}
-        file: ./Dockerfile
+        
 
   deploy:
     runs-on: ubuntu-latest
